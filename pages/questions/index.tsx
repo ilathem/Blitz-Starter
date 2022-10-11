@@ -59,6 +59,9 @@ const QuestionsPage = () => {
       </Head>
 
       <div>
+        <Link href={Routes.Home()}>
+          <a>Home</a>
+        </Link>
         <p>
           <Link href={Routes.NewQuestionPage()}>
             <a>Create Question</a>

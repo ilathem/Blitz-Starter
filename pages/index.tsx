@@ -17,6 +17,10 @@ const UserInfo = () => {
   const currentUser = useCurrentUser()
   const [logoutMutation] = useMutation(logout)
 
+  const linkStyle = {
+    padding: ".5em",
+  }
+
   if (currentUser) {
     return (
       <>
@@ -33,18 +37,23 @@ const UserInfo = () => {
           <br />
           User role: <code>{currentUser.role}</code>
         </div>
+        <Link href={Routes.QuestionsPage()}>
+          <a style={linkStyle}>
+            <strong>Questions</strong>
+          </a>
+        </Link>
       </>
     )
   } else {
     return (
       <>
         <Link href={Routes.SignupPage()}>
-          <a className="button small">
+          <a style={linkStyle}>
             <strong>Sign Up</strong>
           </a>
         </Link>
         <Link href={Routes.LoginPage()}>
-          <a className="button small">
+          <a style={linkStyle}>
             <strong>Login</strong>
           </a>
         </Link>
