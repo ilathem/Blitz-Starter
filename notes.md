@@ -43,3 +43,4 @@ blitz generate resource choice text votes:int:default=0 belongsTo:question
   - `votes:int:default=0` the vote attribute is an integer which defaults to 0
   - `belongsTo:question` create a relation where each choice has 1 question
 - when running the command, don't run `prisma migrate dev` because we have to add the corresponding foreign key to the question model as well
+- `upsert` means "if this item exists, update it. Else, create it"
