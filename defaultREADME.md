@@ -66,7 +66,7 @@ Here is the starting structure of your app.
 ```
 my-blitz-app
 ├── app/
-│   ├── api/
+│   ├── api/ 
 │   ├── auth/
 │   │   ├── components/
 │   │   │   ├── LoginForm.tsx

@@ -14,41 +14,39 @@ Open a terminal, run `npm install` to get your dependencies,
 then `blitz dev` to run the dev environment.
 
 ## What's in Here?
-```
-│   .editorconfig
-│   .env
-│   .env.test
-│   .eslintrc.js
+```tree
+│   .editorconfig --> for code formatting
+│   .eslintrc.js --> for linting
 │   .gitignore
-│   .npmrc
-│   .prettierignore
-│   defaultREADME.md
-│   jest.config.js
-│   next-env.d.ts
-│   next.config.js
-│   notes.md
-│   package-lock.json
-│   package.json
-│   README.md
-│   tsconfig.json
-│   types.ts
+│   .npmrc --> config for npm
+│   .prettierignore --> prettier configuration
+│   defaultREADME.md --> default readme that came with blitz
+│   jest.config.js --> configuration for jest testing framework
+│   next-env.d.ts --> next environment
+│   next.config.js --> next configuration
+│   notes.md --> my notes while doing the tutorial
+│   package-lock.json --> dependencies
+│   package.json --> dependencies
+│   README.md --> what you're reading!
+│   tsconfig.json --> typescript configurations
+│   types.ts --> types for typescript
 │
-├───.husky
+├───.husky --> runs checks before commits and pushes
 │       pre-commit
 │       pre-push
 │
-├───app
-│   │   blitz-client.ts
-│   │   blitz-server.ts
+├───app --> houses application logic (model + controller layer in MVC)
+│   │   blitz-client.ts --> boilerplate for routing
+│   │   blitz-server.ts --> boilerplate for routing
 │   │
 │   ├───auth
-│   │   │   validations.ts
+│   │   │   validations.ts --> defines types for queries/mutations
 │   │   │
-│   │   ├───components
+│   │   ├───components --> reusable react components
 │   │   │       LoginForm.tsx
 │   │   │       SignupForm.tsx
 │   │   │
-│   │   └───mutations
+│   │   └───mutations --> import into client to handle auth
 │   │           changePassword.ts
 │   │           forgotPassword.test.ts
 │   │           forgotPassword.ts
@@ -58,7 +56,7 @@ then `blitz dev` to run the dev environment.
 │   │           resetPassword.ts
 │   │           signup.ts
 │   │
-│   ├───choices
+│   ├───choices --> queries/mutations for the choice model
 │   │   ├───mutations
 │   │   │       deleteChoice.ts
 │   │   │       updateChoice.ts
@@ -67,7 +65,7 @@ then `blitz dev` to run the dev environment.
 │   │           getChoice.ts
 │   │           getChoices.ts
 │   │
-│   ├───core
+│   ├───core --> reusable react components and layouts
 │   │   ├───components
 │   │   │       Form.tsx
 │   │   │       LabeledTextField.tsx
@@ -75,7 +73,7 @@ then `blitz dev` to run the dev environment.
 │   │   └───layouts
 │   │           Layout.tsx
 │   │
-│   ├───questions
+│   ├───questions --> queries/mutations for the question model
 │   │   │   validations.ts
 │   │   │
 │   │   ├───components
@@ -90,19 +88,19 @@ then `blitz dev` to run the dev environment.
 │   │           getQuestion.ts
 │   │           getQuestions.ts
 │   │
-│   └───users
+│   └───users --> queries/mutations/helpers for the user model
 │       ├───hooks
 │       │       useCurrentUser.ts
 │       │
 │       └───queries
 │               getCurrentUser.ts
 │
-├───db
-│   │   index.ts
-│   │   schema.prisma
-│   │   seeds.ts
+├───db --> where database stuff is kept
+│   │   index.ts --> lets us use db throughout the app
+│   │   schema.prisma --> interface between app and database
+│   │   seeds.ts --> for pre-populating information
 │   │
-│   └───migrations
+│   └───migrations --> these are all changes to the db schema
 │       │   .keep
 │       │   migration_lock.toml
 │       │
@@ -118,27 +116,27 @@ then `blitz dev` to run the dev environment.
 ├───integrations
 │       .keep
 │
-├───mailers
+├───mailers --> handles emailing the user
 │       .keep
 │       forgotPasswordMailer.ts
 │
-├───pages
-│   │   404.tsx
-│   │   index.tsx
-│   │   _app.tsx
-│   │   _document.tsx
+├───pages --> displayed to the browser (view layer in MVC)
+│   │   404.tsx --> not found page
+│   │   index.tsx --> home "/" page
+│   │   _app.tsx --> wrapper
+│   │   _document.tsx --> wrapper
 │   │
-│   ├───api
+│   ├───api --> api route
 │   │   └───rpc
 │   │           [[...blitz]].ts
 │   │
-│   ├───auth
+│   ├───auth --> authentication route provided by blitz
 │   │       forgot-password.tsx
 │   │       login.tsx
 │   │       reset-password.tsx
 │   │       signup.tsx
 │   │
-│   └───questions
+│   └───questions --> questions route
 │       │   index.tsx
 │       │   new.tsx
 │       │   [questionId].tsx
@@ -146,11 +144,11 @@ then `blitz dev` to run the dev environment.
 │       └───[questionId]
 │               edit.tsx
 │
-├───public
+├───public --> images/videos/files publicly available
 │       favicon.ico
 │       logo.png
 │
-└───test
+└───test --> testing suite
         index.test.tsx
         setup.ts
         utils.tsx
